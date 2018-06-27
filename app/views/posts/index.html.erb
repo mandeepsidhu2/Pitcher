@@ -1,2 +1,12 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<h1>Post</h1>
+<% i=0 %>
+<ol>
+<% while i<@post.length do %>
+<li><%= @post[i].title %>
+<br>
+<%= @post[i].content %>
+<br>
+</li>
+<% i+=1 %>
+<% end %>
+</ol>
