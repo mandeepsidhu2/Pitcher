@@ -9,4 +9,9 @@ class PostsController < ApplicationController
   	@post=Post.create(title:params[:post][:title],content:params[:post][:content])
   	redirect_to action: 'index'
   end
+  def destroy 
+  	@post=Post.find(params[:id])
+  	@post.destroy
+  	redirect_to action: 'index'
+  end
 end

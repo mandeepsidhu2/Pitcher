@@ -6,7 +6,10 @@
 <br>
 <%= @post[i].content %>
 <br>
+<%= link_to 'Delete', posts_destroy_path(@post[i]), method: :delete, 
+                         data: { confirm: 'Are you sure?' } %>
 </li>
+
 <% i+=1 %>
 <% end %>
 </ol>
