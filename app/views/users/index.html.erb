@@ -1,0 +1,15 @@
+<h1> User List</h1>
+<% @user.reverse.each do |x| %>
+<%= x.name %>
+<br>
+<%= x.password %>
+<br>
+<%= x.email %>
+<br>
+<%= x.age %>
+<br><br>
+<% end %>
+<%if !session[:user_id].blank? %>
+    <%= link_to 'LogOut', user_logout_path, method: :get, 
+                         data: { confirm: 'Are you sure?' }%> 
+  <% end %>

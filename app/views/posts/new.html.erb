@@ -1,4 +1,9 @@
 <h1>Create a Post</h1>
+<%if !session[:user_id].blank? %>
+<% u=User.find(session[:user_id]) %>
+    <%= u.email %>
+                         <% end %>
+                         <br><br>
 <%= form_for @post do |f| %>
 	<%= f.label:title %>
 	<%= f.text_field:title%>

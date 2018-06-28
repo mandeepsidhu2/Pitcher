@@ -6,10 +6,22 @@
 <br>
 <%= @post[i].content %>
 <br>
+<%if @signed_in_user %>
+<%if @post[i].user_id== @signed_in_user.id %>
 <%= link_to 'Delete', posts_destroy_path(@post[i]), method: :delete, 
                          data: { confirm: 'Are you sure?' } %>
+                          <% end %><% end %>
 </li>
 
 <% i+=1 %>
 <% end %>
 </ol>
+ <%if !session[:user_id].blank? %>
+    <%= link_to 'LogOut', user_logout_path, method: :get, 
+                         data: { confirm: 'Are you sure?' }%> 
+                         <% end %>
+
+ <%if !session[:user_id].blank? %>
+    <%= link_to 'CreatePost', posts_new_path, method: :get, 
+                         data: { confirm: 'Are you sure?' }%> 
+                         <% end %>

@@ -10,6 +10,9 @@
   </head>
 
   <body>
+      <% if @signed_in_user %>
+    <h3>Welcome   <%=  @signed_in_user.email%></h3> 
+    <% end%>
     <%= yield %>
   </body>
 </html>
