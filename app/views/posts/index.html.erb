@@ -13,3 +13,14 @@
 <% i+=1 %>
 <% end %>
 </ol>
+<% if @signed_in_user%>
+	<br>
+	<%= link_to 'Create Post' , posts_new_path , method: :get %>
+	<br>
+	<%= link_to 'Sign Out' , users_sign_out_path , method: :get %>
+<% else%>
+	<br>
+	<%= link_to 'Sign In' , users_sign_in_path , method: :get %>
+	<br>
+	<%= link_to 'Sign Up' , users_sign_up_path , method: :get %>
+<%end%>

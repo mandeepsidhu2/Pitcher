@@ -1,0 +1,12 @@
+<h1>Post</h1>
+<% i=0 %>
+<ol>
+<% while i<@user.length do %>
+<li><%= @user[i].name %>
+<br>
+<%= @user[i].email %>
+<br>
+</li>
+<% i+=1 %>
+<% end %>
+</ol>

@@ -1,6 +1,9 @@
-class PostsController < ApplicationController
+class PostsController < UsersController
   def index
   	@post=Post.all
+    if !session[:user_id].blank?
+      @signed_in_user=User.find(session[:user_id])
+    end
   end
   def new 
   	@post=Post.new
