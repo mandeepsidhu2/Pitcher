@@ -6,8 +6,12 @@
 <br>
 <%= @post[i].content %>
 <br>
+<% if @signed_in_user%>
+<% if @signed_in_user.id == @post[i].user_id%>
 <%= link_to 'Delete', posts_destroy_path(@post[i]), method: :delete, 
                          data: { confirm: 'Are you sure?' } %>
+<%end %>
+<%end %>                      
 </li>
 
 <% i+=1 %>
